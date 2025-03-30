@@ -3,8 +3,7 @@ import allure
 import pytest
 from base.base_test import BaseTest
 
-
-@allure.feature("Profile Funcionality")
+@allure.feature("Profile Functionality")
 class TestProfileFeature(BaseTest):
 
     @allure.title("Change profile name")
@@ -21,5 +20,6 @@ class TestProfileFeature(BaseTest):
         self.personal_page.change_name(f"Test {random.randint(1, 100)}")
         self.personal_page.save_changes()
         self.personal_page.is_changes_saved()
+        self.personal_page.make_screenshot("Success")
 
 
